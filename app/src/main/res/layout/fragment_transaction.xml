@@ -1,0 +1,174 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/_15dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_10dp"
+        app:cardElevation="@dimen/_5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/card_color"
+            android:padding="@dimen/_15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/header_text"
+                android:text="@string/transaction_header"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_25sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_15dp"
+                android:layout_marginBottom="@dimen/_15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/type_text"
+                android:layout_below="@id/header_text"
+                android:text="@string/transaction_type_text"
+                android:textSize="@dimen/_18sp"
+                android:textColor="@color/black"/>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/transaction_type"
+                android:layout_below="@id/type_text"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_5dp">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/income"
+                    android:text="@string/income"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sp"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/expense"
+                    android:text="@string/expense"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sp"
+                    android:layout_marginStart="@dimen/_50dp"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/category_text"
+                android:layout_below="@id/transaction_type"
+                android:text="@string/transaction_category_text"
+                android:textSize="@dimen/_18sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_10dp"/>
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_category"
+                android:layout_below="@id/category_text"
+                android:background="@drawable/edit_text_background"
+                android:padding="@dimen/_10dp"
+                android:hint="@string/transaction_category_hint"
+                android:textColorHint="@color/text_hint_color"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sp"
+                android:inputType="text"
+                android:layout_marginTop="@dimen/_5dp"
+                android:importantForAccessibility="yes"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/amount_text"
+                android:layout_below="@id/edit_category"
+                android:text="@string/transaction_amount_text"
+                android:textSize="@dimen/_18sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_amount"
+                android:layout_below="@id/amount_text"
+                android:background="@drawable/edit_text_background"
+                android:padding="@dimen/_10dp"
+                android:hint="@string/transaction_amount_hint"
+                android:textSize="@dimen/_16sp"
+                android:textColorHint="@color/text_hint_color"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_5dp"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/date_text"
+                android:layout_below="@id/edit_amount"
+                android:text="@string/transaction_date_text"
+                android:textSize="@dimen/_18sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_select_date"
+                android:layout_below="@id/date_text"
+                android:background="@drawable/edit_text_background"
+                android:padding="@dimen/_10dp"
+                android:text="@string/select_date_button_text"
+                android:textSize="@dimen/_16sp"
+                android:textColor="@color/text_hint_color"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_5dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_add_transaction"
+                android:layout_below="@id/btn_select_date"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_25dp"
+                android:layout_marginBottom="@dimen/_25dp"
+                app:cardElevation="@dimen/_5dp"
+                app:cardCornerRadius="@dimen/_10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_background"
+                    android:gravity="center"
+                    android:padding="@dimen/_15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/transaction_button_text"
+                        android:textSize="@dimen/_16sp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

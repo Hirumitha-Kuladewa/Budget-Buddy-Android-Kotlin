@@ -64,7 +64,7 @@ Comprehensive financial reporting:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/budget-buddy.git
+   git clone https://github.com/Hirumitha-Kuladewa/Budget-Buddy-Android-Kotlin.git
    ```
 
 2. **Project Setup**
